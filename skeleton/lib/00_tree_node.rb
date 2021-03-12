@@ -38,7 +38,18 @@ class PolyTreeNode
         child.parent=(nil)
     end
 
+    def dfs(target_value)
+        return target_value if self.value == target_value
+
+        self.each do |child|
+            return nil if child == nil
+            child.dfs(target_value)
+
+        end
+
+        # nil
+    end
+
 
 end
 
-   
