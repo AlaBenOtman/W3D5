@@ -49,8 +49,13 @@ class PolyTreeNode
         nil
     end
 
-    def bfs
-
+    def bfs(target_value)
+        array = [self]
+        until array.empty?
+            first = array.shift
+            first.values
+            array << first.children
+        end
     end
 
     def inspect 
