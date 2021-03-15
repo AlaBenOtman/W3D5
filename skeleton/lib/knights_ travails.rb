@@ -48,13 +48,16 @@ class KnightPathFinder
     end
 
     def build_move_tree
-        queue =[root_node ]
+        queue = [root_node]
         until queue.empty?
             current = queue.shift 
             position = current.value 
             new_moves = new_move_positions(position)
-            queue += new_moves
+            nodes = new_moves.map {|move| PolyTreeNode.new(move)}
+            
+            queue += nodes
         end
+        true
     end
 
 
@@ -66,12 +69,5 @@ class KnightPathFinder
     # 50  51  52  53  54  55  56  57
     # 60  61  62  63  64  65  66  67
     # 70  71  72  73  74  75  76  77
-
-    
-
-
-
-
-
-    
 end
+# kpf.find_path([3, 3]) # => [[0, 0], [2, 1], [3, 3]]
