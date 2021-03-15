@@ -15,16 +15,16 @@ class KnightPathFinder
 
     def self.valid_moves(pos)
         row, col = pos
-
+        selected =[]
         POSS_MOVES.each do |k, v|
             if KnightPathFinder.valid?(v.call(row, col))
-                @considered_positions << v.call(row, col)
+                selected << v.call(row, col)
             end
         end
         # make hash/arr procs representing possible moves
         # iterate through poss_moves if a move is valid it is selected
         # return an array of valid possible moves
-
+        selected
     end
 
     def self.valid?(pos)
@@ -42,6 +42,7 @@ class KnightPathFinder
     end
 
     def new_move_positions(pos)
+        @considered_positions += KnightPathFinder.valid_moves(pos)
         
     end
 
