@@ -8,26 +8,23 @@ class PolyTreeNode
     end
 
     def parent=(new_parent)
-        # debugger
         if new_parent == nil 
             @parent.children.delete(self)
             @parent = nil
             return
         end
-            if @parent.nil? 
-                @parent = new_parent
+        
+        if @parent.nil? 
+            @parent = new_parent
 
-            else 
-                @parent.children.delete(self)
-                @parent = new_parent
-            end
+        else 
+            @parent.children.delete(self)
+            @parent = new_parent
+        end
         
         unless new_parent.children.include?(self) 
-            # @parent = new_parent
             new_parent.children << self
         end
-
-        
     end
 
     def add_child(child)
@@ -35,7 +32,7 @@ class PolyTreeNode
     end
 
     def remove_child(child)
-        child.parent=(nil)
+        child.parent = nil
     end
 
     def dfs(target_value)
@@ -50,7 +47,6 @@ class PolyTreeNode
     end
 
     def bfs(target_value)
-        # debugger
         array = [self]
         until array.empty?
             first = array.shift
@@ -65,8 +61,6 @@ class PolyTreeNode
 
     def inspect 
         "<Value:#{self.value}><Childern:#{self.children}><Parent:#{self.parent.value}>"
-        # "<Childern:#{self.children}>" 
-        # "<Parent:#{self.parent.value}>"
     end
 
 end
