@@ -77,15 +77,15 @@ end
         # /     \       \
         # n4    n5       n6
 
-n1 = PolyTreeNode.new("1")
-n2 = PolyTreeNode.new("2")
-n3 = PolyTreeNode.new("3")
-n4 = PolyTreeNode.new("4")
-n5 = PolyTreeNode.new("5")
-n6 = PolyTreeNode.new("6")
-n6.parent = n3
-n5.parent = n2
-n4.parent = n2
-n2.parent = n1
-n3.parent = n1
+# n1 = PolyTreeNode.new("1")
+# n2 = PolyTreeNode.new("2")
+# n3 = PolyTreeNode.new("3")
+# n4 = PolyTreeNode.new("4")
+# n5 = PolyTreeNode.new("5")
+# n6 = PolyTreeNode.new("6")
+# n6.parent = n3
+# n5.parent = n2
+# n4.parent = n2
+# n2.parent = n1
+# n3.parent = n1
 
